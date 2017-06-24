@@ -1,0 +1,16 @@
+<html>
+
+<head>
+  <title>Check out this AWESOME ninja!</title>
+
+</head>
+
+<body>
+  {% with messages =get_flashed_messages() %} {% if messages %} {% for message in messages %}
+  <p style="color:black">{{message}} </p>
+  {% endfor %} {% endif %} {% endwith %}
+
+  <img src="/static/img/{{color}}.jpg">
+</body>
+
+</html>

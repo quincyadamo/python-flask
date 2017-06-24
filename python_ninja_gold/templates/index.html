@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>Ninja Gold</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+</head>
+
+<body>
+  <div id='wrapper'>
+    <p class="tally">Your Gold: {{ session['gold'] }}</p>
+    <div class=box>
+      <form action="/process_money" method="POST">
+        <h3>Farm</h3>
+        <p>(Earn 20-30 pieces of gold)</p>
+        <input type="hidden" name="place" value="farm">
+        <button type="submit">Find Gold!</button>
+      </form>
+    </div>
+
+    <div class=box>
+      <form action="/process_money" method="POST">
+        <h3>Cave</h3>
+        <p>(Earn 10-20 pieces of gold)</p>
+        <input type="hidden" name="place" value="cave">
+        <button type="submit">Find Gold!</button>
+      </form>
+    </div>
+
+    <div class=box>
+      <form action="/process_money" method="POST">
+        <h3>House</h3>
+        <p>(Earn 1-10 pieces of gold)</p>
+        <input type="hidden" name="place" value="house">
+        <button type="submit">Find Gold!</button>
+      </form>
+    </div>
+
+    <div class=box>
+      <form action="/process_money" method="POST">
+        <h3>Casino</h3>
+        <p>(Earn or Lose 0-50 pieces of gold)</p>
+        <input type="hidden" name="place" value="casino">
+        <button type="submit">Find Gold!</button>
+      </form>
+    </div>
+
+    <div id="activity-log">
+      <h4>Activities:</h4>
+      <ul>
+        {% for each in range(0, session['activities']|length) %}
+        <li>{{ session['activities'][each]|safe }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+  </div>
+</body>
+
+</html>

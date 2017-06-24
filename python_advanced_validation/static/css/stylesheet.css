@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  width: 400px;
+  height: 200px;
+  margin: 30px auto;
+  border: 2px solid black;
+  padding: 25px;
+}
+
+h4 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#main-content {
+  width: 400px;
+  height: 130px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px
+}
+
+#main-content form {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.red-background {
+  background-color: red;
+}
+
+.green-background {
+  background-color: green;
+}
+
+reset-button {
+  margin-top: 35px;
+  margin-left: 136px;
+}

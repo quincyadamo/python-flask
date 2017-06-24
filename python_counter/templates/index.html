@@ -1,0 +1,29 @@
+<html>
+
+<head>
+  <title>Counter Assignment</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+</head>
+
+<body>
+  <section id="wrapper">
+
+    <h1>{{sessionType}}</h1>
+    <h2 class="margin-bottom">Counter</h2>
+
+    <p class="margin-bottom">{{count}}</p>
+    {% if sessionType == 'Ninja' %}
+    <form class="margin-bottom" action='/addtwo'>
+      <input type="submit" name="" value="+2">
+    </form>
+    {% endif %}
+
+    <form class="margin-bottom" action='/reset'>
+      <input type="submit" name="" value="reset">
+    </form>
+  </section>
+
+
+</body>
+
+</html>

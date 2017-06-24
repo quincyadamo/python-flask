@@ -1,0 +1,34 @@
+<html>
+
+<head>
+  <title>The Number Game</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+</head>
+
+<body>
+  <section id="wrapper">
+
+    <h1>Welcome to the Great Number Game</h1>
+    <h4>I'm thinking of a number between 1 and 100</h4>
+    <h4>Take a guess!</h4>
+
+    <section id="main-content" class="
+    {% if didWin == 'no' %} red-background %}
+    {% elif didWin == 'yes' %} green-background %}
+    {% endif %} ">
+      <form action="/guess" method='POST'>
+        <input type="text" name="number">
+        <input class="button" type="submit" name="" value="sumbit">
+      </form>
+
+      <form action='/reset'>
+        <input class="reset-button" type="submit" name="" value="reset">
+      </form>
+      {{message}}
+    </section>
+
+  </section>
+
+</body>
+
+</html>
